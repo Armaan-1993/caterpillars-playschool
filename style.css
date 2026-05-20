@@ -1489,3 +1489,15 @@ body {
 
   color: #5b3a29;
 }
+
+.phone-link {
+  color: var(--brown);
+
+  font-weight: 800;
+
+  transition: 0.3s;
+}
+
+.phone-link:hover {
+  color: var(--pink);
+}
