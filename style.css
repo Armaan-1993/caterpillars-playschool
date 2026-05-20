@@ -1149,7 +1149,11 @@ h3 {
 
   line-height: 1.9;
 }
-
+.insta-btn-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
 /* =========================================
    CONTACT
 ========================================= */
@@ -1221,8 +1225,6 @@ h3 {
 /* Decorative flower */
 
 .contact-map::before {
-  content: "🌸";
-
   position: absolute;
 
   top: 12px;
