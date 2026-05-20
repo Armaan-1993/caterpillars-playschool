@@ -483,11 +483,11 @@ h3 {
 
 .sparkle2 {
   bottom: 120px;
-  right: 15%;
+  right: 12%;
 
   font-size: 2.8rem;
 
-  animation-delay: 3s;
+  animation-delay: 0s;
 }
 
 /* =========================================
@@ -771,7 +771,7 @@ h3 {
 }
 
 .feature-card::after {
-  content: "🌸";
+  /* content: "🌸"; */
 
   position: absolute;
 
@@ -912,7 +912,7 @@ h3 {
 }
 
 .gallery::before {
-  content: "🌸";
+  /* content: "🌸"; */
 
   position: absolute;
 
@@ -923,7 +923,7 @@ h3 {
 }
 
 .gallery::after {
-  content: "🦋";
+  /* content: "🦋"; */
 
   position: absolute;
 
