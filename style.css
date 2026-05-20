@@ -1501,5 +1501,29 @@ body {
 }
 
 .phone-link:hover {
+  color: var(--green);
+}
+
+.insta-link {
+  color: var(--brown);
+
+  font-weight: 800;
+
+  transition: 0.3s;
+}
+
+.insta-link:hover {
   color: var(--pink);
+}
+
+.email-link {
+  color: var(--brown);
+
+  font-weight: 800;
+
+  transition: 0.3s;
+}
+
+.email-link:hover {
+  color: var(--blue);
 }
