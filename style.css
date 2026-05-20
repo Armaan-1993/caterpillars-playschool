@@ -27,6 +27,10 @@
   --white: #ffffff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Nunito", sans-serif;
 
@@ -1472,4 +1476,16 @@ body {
   .section-title h2::after {
     display: none;
   }
+}
+
+.seo-text {
+  max-width: 700px;
+
+  margin-top: 20px;
+
+  font-size: 1rem;
+
+  line-height: 1.8;
+
+  color: #5b3a29;
 }
