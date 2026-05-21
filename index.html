@@ -523,7 +523,7 @@
             </div>
           </div>
 
-          <div class="contact-map">
+          <!-- <div class="contact-map">
             <iframe
               title="Google Map showing Caterpillars Playschool location"
               src="https://maps.google.com/maps?q=Caterpillars%20Play%20School%20Kozhencherry&t=&z=15&ie=UTF8&iwloc=&output=embed"
@@ -531,6 +531,39 @@
               loading="lazy"
             >
             </iframe>
+            <a
+              href="https://maps.app.goo.gl/aKxZsvKpu7Zwp1aD6"
+              target="_blank"
+              class="directions-btn"
+              rel="noopener noreferrer"
+            >
+              📍 Get Directions
+            </a>
+          </div> -->
+          <div class="contact-map">
+            <!-- Static Preview -->
+            <button
+              class="map-preview"
+              id="mapPreview"
+              aria-label="Open Google Map"
+            >
+              <img
+                src="/images/map-preview.png"
+                alt="Caterpillars Playschool location map preview"
+                loading="lazy"
+                decoding="async"
+              />
+
+              <div class="map-overlay">
+                <span class="map-icon">📍</span>
+                <span class="map-text">Tap to Load Map</span>
+              </div>
+            </button>
+
+            <!-- Map loads here -->
+            <div id="mapContainer"></div>
+
+            <!-- Directions Button -->
             <a
               href="https://maps.app.goo.gl/aKxZsvKpu7Zwp1aD6"
               target="_blank"

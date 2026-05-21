@@ -58,3 +58,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// =====================================
+// MAPS EMBEDDING PREVIEW
+// =====================================
+
+const mapPreview = document.getElementById("mapPreview");
+const mapContainer = document.getElementById("mapContainer");
+
+mapPreview.addEventListener("click", () => {
+  mapContainer.innerHTML = `
+    <iframe
+      title="Google Map showing Caterpillars Playschool location"
+      src="https://maps.google.com/maps?q=Caterpillars%20Play%20School%20Kozhencherry&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  `;
+
+  mapPreview.style.display = "none";
+});
