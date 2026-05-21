@@ -79,3 +79,77 @@ mapPreview.addEventListener("click", () => {
 
   mapPreview.style.display = "none";
 });
+
+/* ======================================
+   MAGICAL MOBILE GALLERY
+====================================== */
+
+if (window.innerWidth <= 768) {
+  const gallery = document.querySelector(".gallery-grid");
+
+  const items = document.querySelectorAll(".gallery-item");
+
+  const nextBtn = document.querySelector(".next-btn");
+
+  const prevBtn = document.querySelector(".prev-btn");
+
+  let currentIndex = 0;
+
+  /* AUTO FLOAT */
+
+  function goToSlide(index) {
+    gallery.scrollTo({
+      left: items[index].offsetLeft - 10,
+
+      behavior: "smooth",
+    });
+  }
+
+  function nextSlide() {
+    currentIndex++;
+
+    if (currentIndex >= items.length) {
+      currentIndex = 0;
+    }
+
+    goToSlide(currentIndex);
+  }
+
+  function prevSlide() {
+    currentIndex--;
+
+    if (currentIndex < 0) {
+      currentIndex = items.length - 1;
+    }
+
+    goToSlide(currentIndex);
+  }
+
+  /* BUTTONS */
+
+  nextBtn.addEventListener("click", () => {
+    nextSlide();
+
+    restartAutoPlay();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    prevSlide();
+
+    restartAutoPlay();
+  });
+
+  /* AUTO PLAY */
+
+  let autoPlay = setInterval(() => {
+    nextSlide();
+  }, 3500);
+
+  /* RESTART TIMER */
+
+  function restartAutoPlay() {
+    clearInterval(autoPlay);
+
+    autoPlay = setInterval(nextSlide, 3500);
+  }
+}
