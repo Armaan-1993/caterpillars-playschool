@@ -151,3 +151,33 @@ if (window.innerWidth <= 768) {
     autoPlay = setInterval(nextSlide, 3500);
   }
 }
+
+/* ======================================
+   SCROLL REVEAL
+====================================== */
+
+const reveals = document.querySelectorAll(
+  ".feature-card, .activity, .gallery-item, .insta-box, .contact-card, .contact-map",
+);
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("reveal");
+
+        entry.target.classList.add("active");
+      }
+    });
+  },
+
+  {
+    threshold: 0.12,
+  },
+);
+
+reveals.forEach((item) => {
+  item.classList.add("reveal");
+
+  revealObserver.observe(item);
+});

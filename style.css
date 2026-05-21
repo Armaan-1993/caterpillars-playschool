@@ -41,6 +41,39 @@ body {
   overflow-x: hidden;
 
   position: relative;
+
+  animation: pageFade 1.2s ease;
+  background-size: 200% 200%;
+
+  animation: gradientFlow 18s ease infinite;
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* =========================================
@@ -298,7 +331,7 @@ h3 {
     rgba(255, 255, 255, 1),
     rgba(255, 255, 255, 0.95)
   );
-
+  pointer-events: none;
   border-radius: 100px;
 
   opacity: 1;
@@ -439,6 +472,426 @@ h3 {
   }
 }
 
+/* ======================================
+   ADORABLE SMILING CATERPILLAR
+====================================== */
+
+.caterpillar {
+  position: absolute;
+
+  width: 160px;
+
+  height: 70px;
+
+  z-index: 26;
+
+  pointer-events: none;
+}
+
+.caterpillar1 {
+  top: 240px;
+
+  left: -220px;
+
+  animation: crawlRight 34s linear infinite;
+}
+
+.caterpillar2 {
+  bottom: 120px;
+
+  right: -220px;
+
+  animation: crawlLeft 42s linear infinite;
+}
+
+/* BODY */
+
+.caterpillar-body {
+  position: relative;
+
+  width: 100%;
+
+  height: 100%;
+
+  animation: caterpillarBounce 1.6s ease-in-out infinite;
+}
+
+/* BODY SEGMENTS */
+
+.caterpillar-body::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 20px 35px, #a8f06a 0 20px, transparent 21px),
+    radial-gradient(circle at 50px 35px, #7ac943 0 20px, transparent 21px),
+    radial-gradient(circle at 80px 35px, #a8f06a 0 20px, transparent 21px),
+    radial-gradient(circle at 110px 35px, #7ac943 0 20px, transparent 21px),
+    radial-gradient(circle at 140px 35px, #8edb4f 0 22px, transparent 23px);
+
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.18));
+}
+
+/* EYES */
+
+.caterpillar-body::after {
+  content: "";
+
+  position: absolute;
+
+  width: 10px;
+
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #2d1b12;
+
+  right: 18px;
+
+  top: 24px;
+
+  box-shadow: -16px 0 #2d1b12;
+}
+
+/* SMILE */
+
+.caterpillar-body {
+  overflow: visible;
+}
+
+.caterpillar-body span {
+  display: none;
+}
+
+/* SMILE USING EXTRA SHADOW */
+
+.caterpillar::after {
+  content: "";
+
+  position: absolute;
+
+  width: 24px;
+
+  height: 12px;
+
+  border-bottom: 4px solid #2d1b12;
+
+  border-radius: 0 0 24px 24px;
+
+  right: 10px;
+
+  top: 38px;
+}
+
+/* ANTENNA */
+
+.caterpillar::before {
+  content: "";
+
+  position: absolute;
+
+  width: 30px;
+
+  height: 30px;
+
+  border-top: 3px solid #2d1b12;
+
+  border-left: 3px solid #2d1b12;
+
+  border-radius: 50%;
+
+  right: 18px;
+
+  top: 2px;
+
+  transform: rotate(20deg);
+}
+
+/* MOVEMENT */
+
+@keyframes crawlRight {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(150vw);
+  }
+}
+
+@keyframes crawlLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-150vw);
+  }
+}
+
+/* BOUNCE */
+
+@keyframes caterpillarBounce {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .caterpillar {
+    width: 110px;
+
+    height: 50px;
+
+    opacity: 0.9;
+  }
+
+  .caterpillar2 {
+    display: none;
+  }
+}
+
+@keyframes crawlRight {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(130vw);
+  }
+}
+
+@keyframes crawlLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-130vw);
+  }
+}
+
+@keyframes caterpillarWiggle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* MOBILE */
+
+/* @media (max-width: 768px) {
+  .caterpillar {
+    width: 310px;
+
+    height: 80px;
+
+    opacity: 0.75;
+  }
+} */
+
+/* ======================================
+   FLOATING BUBBLES
+====================================== */
+
+.bubble {
+  position: absolute;
+
+  border-radius: 50%;
+
+  background: rgba(98, 161, 203, 0.28);
+
+  backdrop-filter: blur(6px);
+
+  z-index: 24;
+
+  mix-blend-mode: screen;
+
+  filter: blur(2px);
+
+  opacity: 0.45;
+
+  pointer-events: none;
+
+  animation: floatBubble linear infinite;
+}
+
+.bubble1 {
+  width: 80px;
+  height: 80px;
+
+  left: 10%;
+
+  bottom: -120px;
+
+  animation-duration: 10s;
+}
+
+.bubble2 {
+  width: 55px;
+  height: 55px;
+
+  right: 18%;
+
+  bottom: -100px;
+
+  animation-duration: 12s;
+}
+
+.bubble3 {
+  width: 100px;
+  height: 100px;
+
+  left: 55%;
+
+  bottom: -150px;
+
+  animation-duration: 13s;
+}
+
+.bubble4 {
+  width: 65px;
+  height: 65px;
+
+  left: 28%;
+
+  bottom: -130px;
+
+  animation-duration: 20s;
+}
+
+.bubble5 {
+  width: 120px;
+  height: 120px;
+
+  right: 8%;
+
+  bottom: -180px;
+
+  animation-duration: 32s;
+}
+
+.bubble6 {
+  width: 45px;
+  height: 45px;
+
+  left: 70%;
+
+  bottom: -100px;
+
+  animation-duration: 16s;
+}
+
+.bubble7 {
+  width: 90px;
+  height: 90px;
+
+  left: 42%;
+
+  bottom: -150px;
+
+  animation-duration: 26s;
+}
+
+.bubble8 {
+  width: 55px;
+  height: 55px;
+
+  right: 60%;
+
+  bottom: -120px;
+
+  animation-duration: 22s;
+}
+
+.bubble9 {
+  width: 55px;
+  height: 55px;
+
+  right: 22%;
+
+  bottom: -120px;
+
+  animation-duration: 21;
+}
+
+.bubble10 {
+  width: 55px;
+  height: 55px;
+
+  right: 40%;
+
+  bottom: -100px;
+
+  animation-duration: 18s;
+}
+
+.bubble11 {
+  width: 55px;
+  height: 55px;
+
+  right: 76%;
+
+  bottom: -120px;
+
+  animation-duration: 18s;
+}
+
+.bubble12 {
+  width: 55px;
+  height: 55px;
+
+  right: 65%;
+
+  bottom: -120px;
+
+  animation-duration: 12s;
+}
+
+.bubble13 {
+  width: 55px;
+  height: 55px;
+
+  right: 53%;
+
+  bottom: -89px;
+
+  animation-duration: 14s;
+}
+
+@keyframes floatBubble {
+  from {
+    transform: translateY(0) rotate(0deg);
+
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-120vh) rotate(180deg);
+
+    opacity: 0;
+  }
+}
+
 /* =========================================
    FLOATING MAGIC OBJECTS
 ========================================= */
@@ -446,13 +899,15 @@ h3 {
 .hero-decoration {
   position: absolute;
 
-  z-index: 3;
+  z-index: 30;
 
   pointer-events: none;
 
   animation: floaty 5s ease-in-out infinite;
 
   filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.15));
+
+  pointer-events: none;
 }
 
 /* =========================================
@@ -591,7 +1046,7 @@ h3 {
 .hero-wrapper {
   position: relative;
 
-  z-index: 2;
+  z-index: 10;
 
   display: grid;
 
@@ -612,12 +1067,26 @@ h3 {
   border: 8px solid white;
 
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+
+  overflow: hidden;
 }
 
 .hero-image img {
   border-radius: 30px;
 
+  animation: heroFloat 3.5s ease-in-out infinite;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes heroFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
 }
 
 /* ADMISSION BADGE */
@@ -741,6 +1210,30 @@ h3 {
   font-weight: 800;
 
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  animation: badgeFloat 4s ease-in-out infinite;
+}
+
+.trust-badges div:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.trust-badges div:nth-child(3) {
+  animation-delay: 2s;
+}
+
+.trust-badges div:nth-child(4) {
+  animation-delay: 3s;
+}
+
+@keyframes badgeFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 /* =========================================
@@ -939,6 +1432,12 @@ h3 {
   border-radius: 22px;
 
   display: block;
+
+  transition: transform 0.8s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.04);
 }
 
 /* Cute overlay */
@@ -1690,6 +2189,37 @@ footer {
     justify-content: center;
 
     margin: auto;
+
+    position: relative;
+
+    overflow: hidden;
+  }
+
+  .btn::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -120%;
+
+    width: 80%;
+
+    height: 100%;
+
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+
+    transition: 0.8s;
+  }
+
+  .btn:hover::before {
+    left: 130%;
   }
 
   .hero-buttons {
@@ -1904,4 +2434,29 @@ body {
   .activity {
     text-align: center;
   }
+}
+
+/* ======================================
+   SCROLL REVEAL ANIMATION
+====================================== */
+
+.reveal {
+  opacity: 0;
+
+  transform: translateY(60px) scale(0.96);
+
+  filter: blur(8px);
+
+  transition:
+    opacity 1s ease,
+    transform 1s ease,
+    filter 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+
+  transform: translateY(0) scale(1);
+
+  filter: blur(0);
 }
