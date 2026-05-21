@@ -125,6 +125,10 @@ if (window.innerWidth <= 768) {
     goToSlide(currentIndex);
   }
 
+  /* AUTO PLAY */
+
+  let autoPlay = setInterval(nextSlide, 3500);
+
   /* BUTTONS */
 
   nextBtn.addEventListener("click", () => {
@@ -138,12 +142,6 @@ if (window.innerWidth <= 768) {
 
     restartAutoPlay();
   });
-
-  /* AUTO PLAY */
-
-  let autoPlay = setInterval(() => {
-    nextSlide();
-  }, 3500);
 
   /* RESTART TIMER */
 
