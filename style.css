@@ -1152,7 +1152,32 @@ h3 {
 .insta-btn-content {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.btn.btn-primary {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Mobile Fix */
+@media (max-width: 480px) {
+  .btn.btn-primary {
+    padding: 14px 18px;
+  }
+
+  .insta-btn-content {
+    gap: 8px;
+    font-size: 0.9rem;
+  }
+
+  .insta-btn-content svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
 }
 /* =========================================
    CONTACT

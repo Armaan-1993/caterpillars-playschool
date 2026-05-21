@@ -55,7 +55,7 @@ caterpillars-playschool/
 Add your Netlify/Vercel deployment link here:
 
 ```text
-https://your-site.netlify.app
+https://caterpillarsplayschool.netlify.app
 ```
 
 ---
