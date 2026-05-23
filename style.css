@@ -1561,7 +1561,7 @@ h3 {
   .gallery-grid {
     overflow-x: auto;
 
-    touch-action: none;
+    touch-action: pan-y; /* Allow vertical scrolling, disable horizontal swiping */
 
     cursor: not-allowed;
   }
